@@ -24,6 +24,10 @@
   color: white;
 }
 
+.container {
+  background: #fff;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -32,7 +36,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
