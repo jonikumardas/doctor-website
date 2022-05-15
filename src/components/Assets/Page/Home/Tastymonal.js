@@ -3,6 +3,7 @@ import img1 from '../../images/people1.png'
 import img2 from '../../images/people2.png'
 import img3 from '../../images/people3.png'
 import Tastimonals from './Tastimonals';
+import Qute from '../../icons/quote.svg'
 
 const Tastymonal = () => {
     const tastymonals = [
@@ -28,7 +29,7 @@ const Tastymonal = () => {
     ]
 
     return (
-        <div className='px-12'>
+        <div style={{background:`url(${Qute})`, backgroundRepeat:"no-repeat" , backgroundPosition:'right top'}} className='px-12'>
             <div className='my-20'>
             <h4 className='text-accent'>Testimonial</h4>
                 <h2 className='text-3xl'>What Our Patients Says</h2>
