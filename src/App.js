@@ -8,6 +8,7 @@ import Reviews from './components/Assets/Page/Reviews/Reviews';
 import ContactUs from './components/Assets/Page/ContactUs/ContactUs';
 import LogIn from './components/Autintication/LogIn/LogIn';
 import Registation from './components/Autintication/Registation/Registation';
+import RequerAuth from './RequerAuth';
 
 function App() {
   return (
@@ -17,8 +18,12 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
-        <Route path='/apointment' element={<Apointment></Apointment>}></Route>
-        <Route path='/reviews' element={<Reviews></Reviews>}></Route>
+        <Route path='/apointment' element={<RequerAuth>
+          <Apointment></Apointment>
+        </RequerAuth>}></Route>
+        <Route path='/reviews' element={<RequerAuth>
+          <Reviews></Reviews>
+        </RequerAuth>}></Route>
         <Route path='/contactUs' element={<ContactUs></ContactUs>}></Route>
         <Route path='/login' element={<LogIn></LogIn>}></Route>
         <Route path='/registation' element={<Registation></Registation>}></Route>

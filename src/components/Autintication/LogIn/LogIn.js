@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import auth from '../../../Firebase.init';
 import { useForm } from "react-hook-form";
@@ -14,6 +14,9 @@ const LogIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     let signInerror;
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
@@ -25,7 +28,7 @@ const LogIn = () => {
         return <Loading></Loading>
     }
     if (guser||user) {
-        console.log(guser||user);
+        navigate(from, { replace: true });
     }
     return (
     
